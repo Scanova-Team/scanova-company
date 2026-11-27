@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Scanova</title>
+<link rel="icon" type="image/png" href="img/logo-mark.png">
+<meta property="og:title" content="Scanova">
+<meta property="og:description" content="Smart cybersecurity solutions: scan links, QR codes and emails, and open risky ones in an isolated sandbox.">
+<meta property="og:type" content="website">
+<meta name="description" content="Scanova checks links, QR codes and emails, then opens risky ones in an isolated sandbox.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="progress" aria-hidden="true"><i></i></div>
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-in" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 10.5V16M8 7.8v.01M12 16v-5.5M12 12.8c0-1.5 1-2.3 2.1-2.3 1.3 0 1.9.9 1.9 2.3V16"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7.5 8 6 8-6"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3 10.5 13.5M21 3l-6.5 18-4-7.5L3 9.5 21 3Z"/></symbol>
+  <symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2M4 12h16"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></symbol>
+  <symbol id="i-report" viewBox="0 0 24 24"><path d="M6 3h8l4 4v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v4h4M9 14l2 2 4-4"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H10l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="#top" id="top"><img src="img/logo-mark.png" alt="" width="36" height="36">Scanova</a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#platforms">Platforms</a>
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#team">Team</a>
+        <a class="pill" href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Mobile MVP · Web in development</p>
+        <h1>Smart Cybersecurity Solutions</h1>
+        <p class="lede">Scanova checks links, QR codes and emails, then opens the risky ones in an isolated sandbox, away from your device.</p>
+
+        <div class="links">
+          <a class="link primary" href="https://www.linkedin.com/company/scan0va" target="_blank" rel="noopener noreferrer">
+            <span class="ico"><svg class="i"><use href="#i-in"/></svg></span>
+            <span class="txt"><b>Follow Scanova on LinkedIn</b><small>linkedin.com/company/scanova</small></span>
+            <svg class="i go"><use href="#i-arrow"/></svg>
+          </a>
+          <div class="split">
+            <a class="link" href="mailto:scanova.team@gmail.com">
+              <span class="ico"><svg class="i"><use href="#i-mail"/></svg></span>
+              <span class="txt"><b>Email the team</b><small id="mail-hero">scanova.team@gmail.com</small></span>
+            </a>
+            <button class="copy" type="button" data-copy="scanova.team@gmail.com" data-target="mail-hero" aria-label="Copy email address"><svg class="i"><use href="#i-copy"/></svg><span>Copy</span></button>
+          </div>
+          <a class="link" href="mailto:scanova.team@gmail.com?subject=Early%20access%20request&amp;body=Hi%20Scanova%20team%2C%0A%0AI%27d%20like%20to%20try%20the%20app.">
+            <span class="ico"><svg class="i"><use href="#i-send"/></svg></span>
+            <span class="txt"><b>Request early access</b><small>Opens your mail app. Or write to the address above.</small></span>
+            <svg class="i go"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="stage">
+          <img class="p-left" src="img/report-danger-v3.webp" width="390" height="1051" alt="Scanova security report showing a phishing email with a score of 23">
+          <img class="p-mid" src="img/home.webp" width="390" height="900" alt="Scanova home screen with a Scan Now button for QR codes, links and emails">
+          <img class="p-right" src="img/sco-chat.webp" width="390" height="839" alt="Sco, the Scanova assistant, greeting the user in a chat">
+        </div>
+        <p class="stage-note">Screens from the Scanova app prototype, shown with sample data.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="sec" id="platforms">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Platforms</p>
+        <h2>The app is live as a prototype. The web platform is next.</h2>
+        <p>Scanova is meant to cover every place you meet a suspicious link, so the same checks are planned for phone and desktop.</p>
+      </div>
+      <figure class="cover">
+        <img src="img/web-cover.webp" width="1376" height="768" alt="Scanova on a laptop and two phones: web dashboard and mobile app screens">
+        <figcaption>Web platform concept (in development) next to the mobile app.</figcaption>
+      </figure>
+      <div class="cols-2">
+        <article class="card">
+          <span class="status ok"><i></i>Prototype (MVP) · tested by real users</span>
+          <h3>Scanova mobile app</h3>
+          <p>Scan on the go with your camera, or paste what you received.</p>
+          <ul>
+            <li>QR code, link and email scanning</li>
+            <li>Detailed security report for every scan</li>
+            <li>Secure sandbox for opening risky links and files</li>
+            <li>Sco, a chatbot that guides and advises</li>
+          </ul>
+          <div class="chips"><span class="chip">Flutter</span><span class="chip">AI backend</span></div>
+        </article>
+        <article class="card soon">
+          <span class="status warn"><i></i>In development</span>
+          <h3>Scanova web platform</h3>
+          <p>The same scanning, reports and sandbox on a bigger screen.</p>
+          <ul>
+            <li>Personal and Business accounts</li>
+            <li>Subscription plans for individuals and teams</li>
+            <li>Scan history and reports in the browser</li>
+            <li>Sandbox sessions that open right in the page</li>
+          </ul>
+          <div class="chips"><span class="chip">Flutter Web</span></div>
+        </article>
+      </div>
+      <p class="foot-note">Both are built around one AI backend, so the app and the web version are designed to give the same result for the same scan.</p>
+    </div>
+  </section>
+
+  <section class="sec alt" id="features">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Features</p>
+        <h2>What Scanova does</h2>
+      </div>
+      <div class="feat">
+        <article>
+          <span class="ico"><svg class="i"><use href="#i-scan"/></svg></span>
+          <div><h3>AI scanning</h3><p>Links, QR codes and emails go through AI models trained on datasets of known malicious links and email blacklists.</p></div>
+        </article>
+        <article>
+          <span class="ico"><svg class="i"><use href="#i-box"/></svg></span>
+          <div><h3>Secure sandbox</h3><p>Open a link or file in a virtual environment that is separate from your device and your data, then end the session when you are done.</p></div>
+        </article>
+        <article>
+          <span class="ico"><svg class="i"><use href="#i-report"/></svg></span>
+          <div><h3>Detailed reports</h3><p>Every scan ends with a security score and a breakdown of what was checked, so you can see why something was flagged.</p></div>
+        </article>
+        <article>
+          <span class="ico"><svg class="i"><use href="#i-chat"/></svg></span>
+          <div><h3>Sco assistant</h3><p>A chatbot that explains scan results, walks you through the app and gives practical advice on phishing and fraud.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="how">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">How it works</p>
+        <h2>What happens when you scan something</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="n">STEP 1</span>
+          <h3>Scan or paste</h3>
+          <p>Point the camera at a QR code, paste a link, or check an email by pasting it or uploading the .eml file.</p>
+          <img src="img/link.webp" width="390" height="852" alt="Paste Link screen with a URL field and recent links" loading="lazy">
+        </div>
+        <div class="step">
+          <span class="n">STEP 2</span>
+          <h3>Read the report</h3>
+          <p>You get a security score and a breakdown: HTTPS, blacklist and redirects for links; sender domain, phishing keywords, embedded links and attachments for emails.</p>
+          <div class="scores">
+            <span class="score ok"><b>95</b>Low risk</span>
+            <span class="score warn"><b>58</b>Potential risk</span>
+            <span class="score bad"><b>23</b>Possible risk</span>
+          </div>
+          <img src="img/report-safe-v2.webp" width="390" height="852" alt="Security report with a score of 95 and a low risk label" loading="lazy">
+        </div>
+        <div class="step">
+          <span class="n">STEP 3</span>
+          <h3>Open it in the sandbox</h3>
+          <p>If you still need to look, the page opens in an isolated environment. Device, storage, downloads and scripts show their protection status, and the session auto-destroys when you close it.</p>
+          <img src="img/sandbox-v2.webp" width="414" height="936" alt="Secure Sandbox screen showing a web page inside a virtual environment" loading="lazy">
+        </div>
+      </div>
+
+      <div class="more">
+        <h3>More screens from the app</h3>
+        <div class="strip">
+          <figure><img src="img/qr.webp" width="390" height="844" alt="QR code scanner screen" loading="lazy"><figcaption>QR scanner, with gallery and paste options</figcaption></figure>
+          <figure><img src="img/mail.webp" width="390" height="1073" alt="Check Mail screen with sender, content and attachment fields" loading="lazy"><figcaption>Email check, by text or .eml file</figcaption></figure>
+          <figure><img src="img/history-v2.webp" width="393" height="852" alt="Scan history list with safe, suspicious and dangerous results" loading="lazy"><figcaption>Scan history, filtered by result</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec alt" id="premium">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Coming next</p>
+        <h2>Premium, with Sco unlimited</h2>
+        <p>Premium is designed to unlock unlimited scans, unlimited sandbox sessions and Sco, the assistant that explains every scan result and what to do next. Plans and pricing are not final.</p>
+        <span class="status warn"><i></i>Design preview · in development</span>
+      </div>
+      <div class="strip four">
+        <figure><img src="img/premium-sheet.webp" width="393" height="852" alt="Premium offer screen introducing Sco, with yearly and monthly options" loading="lazy"><figcaption>The Premium offer</figcaption></figure>
+        <figure><img src="img/premium-pay.webp" width="393" height="852" alt="Upgrade screen with Vodafone Cash, InstaPay and card payment methods" loading="lazy"><figcaption>Choosing a payment method</figcaption></figure>
+        <figure><img src="img/premium-received.webp" width="393" height="852" alt="Request received screen while a transfer is being confirmed" loading="lazy"><figcaption>Payment being confirmed</figcaption></figure>
+        <figure><img src="img/premium-active.webp" width="393" height="852" alt="Premium active screen with unlimited scans and sandbox" loading="lazy"><figcaption>Premium active</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="team">
+    <div class="wrap about">
+      <div>
+        <p class="eyebrow">Team</p>
+        <h2>The team</h2>
+        <p>Scanova is built by four founders. The mobile app is a working prototype that real users have tried, and the web platform is the next step.</p>
+        <p><span class="chip">Stage: Prototype (MVP)</span></p>
+      </div>
+      <div class="team">
+        <div class="member"><span class="avatar" aria-hidden="true">OB</span><b>Omar Mohamed Ibrahim Badawy</b></div>
+        <div class="member"><span class="avatar" aria-hidden="true">NM</span><b>Noor Hussein Abdullah Mwafy</b></div>
+        <div class="member"><span class="avatar" aria-hidden="true">SA</span><b>Shahd Mohamed Hamed Abdelrahman</b></div>
+        <div class="member"><span class="avatar" aria-hidden="true">HF</span><b>Hend Mohamed Mohamed Fiyala</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="contact">
+    <div class="wrap">
+      <div class="panel">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Want to try it, partner or support us?</h2>
+          <p>Write to the team or follow the project on LinkedIn. We read every message.</p>
+        </div>
+        <div class="links">
+          <a class="link primary" href="https://www.linkedin.com/company/scan0va" target="_blank" rel="noopener noreferrer">
+            <span class="ico"><svg class="i"><use href="#i-in"/></svg></span>
+            <span class="txt"><b>LinkedIn</b><small>linkedin.com/company/scanova</small></span>
+            <svg class="i go"><use href="#i-arrow"/></svg>
+          </a>
+          <div class="split">
+            <a class="link" href="mailto:scanova.team@gmail.com">
+              <span class="ico"><svg class="i"><use href="#i-mail"/></svg></span>
+              <span class="txt"><b>Email</b><small id="mail-contact">scanova.team@gmail.com</small></span>
+            </a>
+            <button class="copy" type="button" data-copy="scanova.team@gmail.com" data-target="mail-contact" aria-label="Copy email address"><svg class="i"><use href="#i-copy"/></svg><span>Copy</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="#top"><img src="img/logo-mark.png" alt="" width="28" height="28">Scanova</a>
+    <span>© 2026 Scanova</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="js/motion.js" defer></script>
+</body>
+</html>
